@@ -27,7 +27,9 @@ fruits_to_show = my_fruit_list.loc[fruits_selected]
 streamlit.dataframe(fruits_to_show)
 
 streamlit.header("Fruityvice Fruit Advice!")
-'''
+
+
+
 try:
   fruit_choice = streamlit.text_input('What fruit would you like information about?','Kiwi')
   if not fruit_choice:
@@ -41,6 +43,7 @@ try:
 except URLError as e:
   streamlit.error()
 '''
+
 fruit_choice = streamlit.text_input('What fruit would you like information about?','Kiwi')
 #import requests
 #fruityvice_response = requests.get("https://fruityvice.com/api/fruit/"+"kiwi")
@@ -72,3 +75,4 @@ streamlit.text("What fruit would you like to add?")
 fruit_choice = streamlit.text_input('What fruit would you like to add?','jackfruit')
 streamlit.write('Thanks for adding ', fruit_choice)
 my_cur.execute("insert into fruit_load_list values ('from streamlit')")
+'''
