@@ -40,38 +40,3 @@ try:
 
 except URLError as e:
   streamlit.error()
-
-'''
-fruit_choice = streamlit.text_input('What fruit would you like information about?','Kiwi')
-#import requests
-#fruityvice_response = requests.get("https://fruityvice.com/api/fruit/"+"kiwi")
-fruityvice_response = requests.get("https://fruityvice.com/api/fruit/" + fruit_choice)
-
-
-#streamlit.text(fruityvice_response.json())
-
-
-# write your own comment -what does the next line do? 
-fruityvice_normalized = pandas.json_normalize(fruityvice_response.json())
-# write your own comment - what does this do?
-streamlit.dataframe(fruityvice_normalized)
-
-#import snowflake.connector
-#streamlit.start()
-my_cnx = snowflake.connector.connect(**streamlit.secrets["snowflake"])
-my_cur = my_cnx.cursor()
-#my_cur.execute("SELECT CURRENT_USER(), CURRENT_ACCOUNT(), CURRENT_REGION()")
-my_cur.execute("select * from pc_rivery_db.public.fruit_load_list")
-#my_data_row = my_cur.fetchone()
-my_data_row = my_cur.fetchall()
-#streamlit.text("Hello from Snowflake:")
-#streamlit.text("The fruit load list contains:")
-streamlit.header("The fruit load list contains:")
-#streamlit.text(my_data_row)
-streamlit.dataframe(my_data_row)
-streamlit.text("What fruit would you like to add?")
-fruit_choice = streamlit.text_input('What fruit would you like to add?','jackfruit')
-streamlit.write('Thanks for adding ', fruit_choice)
-my_cur.execute("insert into fruit_load_list values ('from streamlit')")
-'''
-
