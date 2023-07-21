@@ -28,7 +28,7 @@ streamlit.dataframe(fruits_to_show)
 
 streamlit.header("Fruityvice Fruit Advice!")
 
-'''
+
 
 try:
   fruit_choice = streamlit.text_input('What fruit would you like information about?')
@@ -76,3 +76,4 @@ fruit_choice = streamlit.text_input('What fruit would you like to add?','jackfru
 streamlit.write('Thanks for adding ', fruit_choice)
 my_cur.execute("insert into fruit_load_list values ('from streamlit')")
 
+'''
